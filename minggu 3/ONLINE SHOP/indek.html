@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Online Shop</title>
+  <style>
+  body{
+    font-family: Arial, Helvetica, sans-serif;
+    width:800px;
+    margin: 0 auto;
+  }
+  .item{
+    background: rgba(243, 4, 4, 0.1);
+    display: flex;
+    flex-direction: row;
+    min-height: 200px;
+    padding:20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  .item .picture{
+    flex:1;
+    height: auto;
+    width: 100%;
+    background: rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+  }
+  .item .picture .thumb{
+    display: block;
+    width:100%;
+  }
+  .item .text{
+    flex:3;
+    color:rgba(0, 0, 0, 0.8);
+    padding:10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .item .text .name{
+    color: RED;
+    font-size: 23px;
+    font-weight: bold;
+  }
+  .item .text .price{
+    font-size: 20px;
+    color: rgba(66, 48, 224, 0.8);
+    font-weight: bold;
+  }
+  .item .text .rating{
+    font-weight: bold;
+  }
+  .item .text .rating::before{
+    content:"Quality: "
+  }
+  </style>
+</head>
+<body>
+  <div id="item-list">
+  </div>
+  <script>
+    let data = [
+      {
+        "name":"Whiteboard",
+        "description":"PAPAN TULIS INI TERBUAT DARI BAHAN PILIHAN DAN KAYU PILIHAN DARI LUAR NEGRI DIBUAT OLEH PARA AHLI PEMBUAT KAYU YANG AHLI BERASAL DARI ENGLAND.",
+        "price":3500000,
+        "image":[
+          "assets/whiteboard1.jpg",
+          "assets/whiteboard2.jpg",
+          "assets/whiteboard3.jpg"
+        ],
+        "rating":[
+          "0","1","21","6","22"
+        ],
+      },
+      {
+        "name":"Chair",
+        "description":"BANGKU INI TERBUAT DARI KAYU YANG BERKUALITAS TINGGI DAN HARGA NYA PUN TERJANGAKU ",
+        "price":130000,
+        "image":[
+          "assets/chair1.jpg",
+          "assets/chair2.jpg",
+          "assets/chair3.jpg"
+        ],
+        "rating":[
+          "0","50","1","2","10"
+        ]
+      },
+      {
+        "name":"Totebag",
+        "description":"BAHAN TAS INI TERBUAT DARI KAIN YANG BAGUS DAN TIDAK MUDAH RUSAK ATAUPUN ROBEK HARGA TAS INI CUKUP MURAH DAN TERJANGKAU",
+        "price":800000,
+        "image":[
+          "assets/totebag1.jpg",
+          "assets/totebag2.jpg",
+          "assets/totebag3.jpg"
+        ],
+        "rating":[
+          "12","0","0","0","5"
+        ]
+      },
+      {
+        "name":"Boardmarker",
+        "description":"SPIDOL INI HANYA TERDAPAT DI TOKO-TOKO TERTENTU KARNA KUALITAS NYA YANG SANGAT BAIK DAN TERBUAT DARI TINTA PILIHAN YANG SANGAT BAIK",
+        "price":40000,
+        "image":[
+          "assets/boardmarker1.jpg",
+          "assets/boardmarker2.jpg",
+          "assets/boardmarker3.jpg"
+        ],
+        "rating":[
+          "0","0","1","3","8"
+        ]
+      },
+      {
+        "name":"Book",
+        "description":"BUKU INI DI TULIS OLEH ORANG YANG MEMPUNYAI KARYA YANG SANGAT BAIK ",
+        "price":80000,
+        "image":[
+          "assets/book1.jpg",
+          "assets/book2.jpg",
+          "assets/book3.jpg"
+        ],
+        "rating":[
+          "1","2","2","2","31"
+        ]
+      }
+    ];
+    function rating(arr){
+      let current = "";
+      let rating = "";
+      let arrRating = ["Buruk","Cukup","Baik","Sangat Baik","Super"];
+      arr.reverse();
+      arr.forEach((v,i)=>{
+        if(current !=""){
+          if(current > v){
+            rating = arrRating[i]
+          }
+        }
+        current = v;
+      })
+      return rating;
+    }
+    
+    let element = "";
+    data.forEach((v,i)=>{
+      element+='\
+      <div class="item">\
+        <div class="picture">\
+          <img class="thumb" src="'+data[i].image[0]+'"></img>\
+        </div>\
+        <div class="text">\
+          <div class="name">'+data[i].name+'</div>\
+          <div class="price">Rp.'+data[i].price+',-</div>\
+          <div class="description">'+data[i].description+'</div>\
+          <div class="rating">'+rating(data[i].rating)+'</div>\
+        </div>\
+      </div>\
+      ';
+    });
+    document.getElementById('item-list').innerHTML = element;
+  </script>
+</body>
+</html>

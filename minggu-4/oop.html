@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="kotak"></div>
+    <div id="kotak1"></div>
+    <div id="kotak2"></div>
+    <div id="kotak3"></div>
+    <script>
+        class operasihitung{
+            pertambahan(a,b){
+                return a+b
+            }
+            perkalian(a,b){
+                return a*b
+            }
+            pembagian(a,b){
+                return a/b
+            }
+            pengurangan(a,b){
+                return a-b
+            }
+        }
+
+        const OH = new operasihitung ()
+        document.getElementById('kotak').innerHTML = OH.perkalian (2,5);
+        document.getElementById('kotak1').innerHTML = OH.pertambahan (2,5);
+        document.getElementById('kotak2').innerHTML = OH.pengurangan (10,5);
+        document.getElementById('kotak3').innerHTML = OH.pembagian (10,5);
+    </script>
+</body>
+</html>

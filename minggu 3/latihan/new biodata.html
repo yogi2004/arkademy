@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Biodata</title>
+</head>
+<body>
+    <div id="nama1">nama </div>
+    <div id="kelas1">kelas</div>
+    <div id="alamat1">alamat</div>
+    <div id="jurusan1">jurursan</div>
+
+    <script>
+        let data = {
+            "nama":"YOGI",
+            "kelas":"XI",
+            "alamat":"JL.KINGKIT 9 NO:23",
+            "jurusan":"RPL",
+        };
+        let nama = document.getElementById('nama');
+        let kelas = document.getElementById('kelas');
+        let alamat = document.getElementById('alamat');
+        let jurusan = document.getElementById('jurusan');
+
+        nama.innerHTML = data.nama 
+        kelas.innerHTML = data.kelas
+        alamat.innerHTML = data.alammat 
+        jurusan.innerHTML = data.jurusan
+    </script>
+</body>
+</html>

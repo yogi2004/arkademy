@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .calc{
+        width: 300px;
+        background: aqua;
+    }
+    .nav{
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+    }
+    .title{
+        flex: 1;
+        text-align: center;
+    }
+    .close, .minimize, .maximize, .menu {
+        padding: 5px;
+        background: black;
+        color : white;
+        margin-left: 3px;
+        margin-right: 3px;
+    }
+
+    .display{
+        height: 50px;
+        background: white;
+        margin: 5PX;
+    }
+    .input{
+        display: flex;
+        flex-direction: column;
+        background: pink;
+    }
+    .wrapper{
+        display: block;
+    }
+    .row{
+        display: flex;
+        flex-direction: row;
+    }
+    .square{
+        flex: 1;
+        text-align: center;
+        margin: 3px;
+        padding: 5px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 3px;
+        background: whitesmoke;
+    }
+    .square.hover{
+        cursor: pointer;
+    }
+
+</style>
+<body>
+    <div class="calc">
+    <div class="nav">
+        <div class="close">x</div>
+        <div class="minimize">-</div>
+        <div class="maximize">o</div>
+        <div class="title">basic mode</div>
+        <div class="menu">m</div>
+    </div>
+        <div class="display" id="hasil"></div>
+        <div class="input">
+            <div class="wrapper">
+            <div class="row">
+                <div class="square"onclick="calculator.tombol(7)">7</div>
+                <div class="square"onclick="calculator.tombol(8)">8</div>
+                <div class="square"onclick="calculator.tombol(9)">9</div>
+            </div>  
+            </div>
+            <div class="wrapper">
+            <div class="row">
+                <div class="square"onclick="calculator.tombol(4)">4</div>
+                <div class="square"onclick="calculator.tombol(5)">5</div>
+                <div class="square"onclick="calculator.tombol(6)">6</div>
+            </div>
+            </div>
+            <div class="wrapper">
+            <div class="row">
+                <div class="square" onclick="calculator.tombol(1)">1</div>
+                <div class="square"onclick="calculator.tombol(2)">2</div>
+                <div class="square"onclick="calculator.tombol(3)">3</div>
+            </div>
+            </div>
+            <div class="wrapper">
+            <div class="row">
+                <div class="square"onclick="calculator.tombol(0)">0</div>
+                <div class="square">/</div>
+                <div class="square">c</div>
+            </div>
+            </div>
+            <div class="wrapper">
+            <div class="row">
+                <div class="square">+</div>
+                <div class="square">-</div>
+                <div class="square">x</div>
+            </div>
+            </div>
+            <div class="wrapper">
+            <div class="row">
+                    <div class="square">=</div>
+            </div>
+            </div>
+        </div>
+        </div>
+<script>
+    class Kalkuator {
+        tombol (nama){
+            document.getElementById('hasil').innerHTML += nama.toString()
+        }
+    }
+
+    const calculator = new Kalkuator()
+</script>
+</body>
+</html>

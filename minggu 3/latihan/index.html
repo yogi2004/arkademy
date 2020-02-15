@@ -1,0 +1,71 @@
+<html>
+<head>
+<title> Biodata yogi saputra</title>
+</head>
+<style>
+    #nama::before{
+        content: "Nama: "
+    }
+    #kelas::before{
+        content: "Kelas: "
+    }
+    #tanggallahir::before{
+        content: "tanggallahir: "
+    }
+    #alamat::before{
+        content: "alamat: "
+    }
+    #citacita::before{
+        content: "citacita: "
+    }
+    #agama::before{
+        content: "agama: "
+    }
+    #hobbi::before{
+        content: "hobbi: "
+    }
+</style>
+<body>
+<form action="#" style="width: 700px"class="posisi";>
+<fieldset class="h"/>
+<table style="width: 600px;">
+<body style="background-color:red"></body>
+
+<img src="yogi.jpg" alt="" width="200px;">
+<div id="nama"></div>
+<div id="kelas"></div>
+<div id="tanggallahir"></div>
+<div id="alamat"></div>
+<div id="citacita"></div>
+<div id="agama"></div>
+<div id="hobbi"></div>
+<script>
+    let data = {
+        nama:"Yogi Saputra",
+        kelas:"XI-RPL 1",
+        tanggallahir:"Jakarta, 5 Januari 2004",        
+        alamat:"Jl.kingkit 9 no 23",        
+        citacita:"voly player",        
+        agama:"islam",        
+        hobbi:"voly",        
+
+    };
+
+    let nama = document.getElementById('nama');
+    let kelas = document.getElementById('kelas');
+    let tanggallahir = document.getElementById('tanggallahir');
+    let alamat = document.getElementById('alamat');
+    let citacita = document.getElementById('citacita')
+    let agama= document.getElementById('agama');
+    let hobbi= document.getElementById('hobbi');
+
+    nama.innerHTML = data.nama
+    kelas.innerHTML = data.kelas
+    tanggallahir.innerHTML = data.tanggallahir
+    alamat.innerHTML = data.alamat
+    citacita.innerHTML = data.citacita
+    agama.innerHTML = data.agama
+    hobbi.innerHTML = data.hobbi
+</script>
+</body>
+</html>
